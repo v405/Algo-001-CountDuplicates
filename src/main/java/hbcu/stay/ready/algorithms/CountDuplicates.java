@@ -1,4 +1,5 @@
 package hbcu.stay.ready.algorithms;
+import java.util.ArrayList;
 
 public class CountDuplicates {
     /**
@@ -7,7 +8,17 @@ public class CountDuplicates {
      * @return
      */
     public Integer countDuplicates(String[] input){
-        return null;
+
+        ArrayList<String> duplicates = new ArrayList<String>();
+
+        for (int x = 0; x < input.length; x++) {
+            for (int y = x + 1; y < input.length; y++) {
+                if (input[x] == input[y] && !duplicates.contains(input[x])) {
+                    duplicates.add(input[x]);
+                }
+            }
+        }
+        return duplicates.size();
     }
 
     /**
@@ -16,6 +27,15 @@ public class CountDuplicates {
      * @return
      */
     public Integer countDuplicates(Integer[] input){
-        return null;
+        ArrayList<Integer> duplicates = new ArrayList<Integer>();
+
+        for (int x = 0; x < input.length; x++) {
+            for (int y = x + 1; y < input.length; y++) {
+                if (input[x] == input[y] && !duplicates.contains(input[x])) {
+                    duplicates.add(input[x]);
+                }
+            }
+        }
+        return duplicates.size();
     }
 }
